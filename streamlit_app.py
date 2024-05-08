@@ -16,7 +16,7 @@ session = cnx.session()
 my_dataframe = session.table("SMOOTHIES.PUBLIC.FRUIT_OPTIONS").select(col('fruit_name'))
 # st.dataframe(data=my_dataframe, use_container_width=True)
 
-ingredients_list = st.multiselect(
+ingredients_list = MultiSelectMixin.multiselect(
     'Choose up to 5 ingredients:',
       my_dataframe
     , max_selection = 5
